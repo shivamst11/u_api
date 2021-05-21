@@ -13,11 +13,6 @@ app.debug=True
 
 
 
-connection =psycopg2.connect(DATABASE_URL)
-cursor=connection.cursor()
-cursor.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY,username VARCHAR,password VARCHAR")
-connection.commit()
-connection.close()
 
 class HelloWorld (Resource):
     def get(self):
