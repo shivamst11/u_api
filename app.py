@@ -1,9 +1,10 @@
+from logging import debug
 from flask import Flask
 from flask_restful import Resource,Api
 
 app=Flask(__name__)
 api=Api(app)
-
+app.debug=True
 
 class HelloWorld (Resource):
     def get(self):
@@ -11,4 +12,4 @@ class HelloWorld (Resource):
     
 api.add_resource(HelloWorld,'/test')
 
-app.run(debug=True)
+app.run()
